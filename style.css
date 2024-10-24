@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.portfolio-section {
+  width: 80%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer; /* Indicates that the section is clickable */
+}
+
+.portfolio-slider-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.portfolio-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.portfolio-item {
+  flex: 0 0 20%; /* Each item takes 20% of the width, meaning 5 items will show */
+  max-width: 20%;
+  box-sizing: border-box;
+}
+
+.portfolio-item img {
+  width: 100%;
+  display: block;
+}
+
+/* Arrow styles */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 10;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+/* Overlay styles */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  opacity: 1; /* Overlay visible by default */
+  pointer-events: none; /* Prevent interaction through the overlay */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.overlay.hidden {
+  opacity: 0; /* Hide overlay when 'hidden' class is added */
+}
