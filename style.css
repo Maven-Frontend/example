@@ -27,7 +27,7 @@ body {
 }
 
 .portfolio-item {
-  flex: 0 0 20%; /* Each item takes 20% of the width, meaning 5 items will show */
+  flex: 0 0 20%; /* Default: Each item takes 20% of the width for desktop (5 items visible) */
   max-width: 20%;
   box-sizing: border-box;
 }
@@ -79,4 +79,86 @@ body {
 
 .overlay.hidden {
   opacity: 0; /* Hide overlay when 'hidden' class is added */
+}
+
+/* Responsive layout for mobile screens */
+@media (max-width: 768px) {
+  .portfolio-item {
+    flex: 0 0 100%; /* Each item takes 100% of the width on mobile */
+    max-width: 100%;
+  }
+}
+
+
+
+/* testimonials section */
+
+/* Testimonials Section Styling */
+.testimonials-section {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonials-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.testimonials-slider-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.testimonials-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.testimonial {
+  flex: 0 0 33.33%; /* Show 3 testimonials per view on desktop */
+  max-width: 33.33%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.stars {
+  font-size: 1.5em;
+  color: #FFD700;
+}
+
+.message {
+  font-style: italic;
+  margin: 15px 0;
+}
+
+.author {
+  font-weight: bold;
+  color: #555;
+}
+
+.dots {
+  margin-top: 15px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+  .testimonial {
+    flex: 0 0 100%; /* Show 1 testimonial per view on mobile */
+    max-width: 100%;
+  }
 }
