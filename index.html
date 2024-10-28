@@ -1,127 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Slider</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    swiper-container {
+      width: 100%;
+    }
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container_portfolio {
+      height: 100%;
+    }
+
+    swiper-slide img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      position: relative;
+    }
+
+    /* Overlay styling */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Show overlay on hover */
+    .image-wrapper:hover .overlay {
+      opacity: 1;
+    }
+
+    /* Overlay content */
+    .overlay h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .overlay a {
+      color: #fff;
+      text-decoration: underline;
+      margin-top: 5px;
+    }
+    .container_portfolio{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
 </head>
-<body style="display: flex; flex-direction: column;">
-  <div class="portfolio-section" id="portfolio-section">
-    <!-- Left Arrow -->
-    <button class="arrow left-arrow" id="left-arrow">&#10094;</button>
 
-    <!-- Slider container -->
-    <div class="portfolio-slider-container">
-      <div class="portfolio-slider" id="slider">
-        <div class="portfolio-item">
-          <img src="1.jpg" alt="Portfolio 1">
-        </div>
-        <div class="portfolio-item">
-          <img src="1.jpg" alt="Portfolio 2">
-        </div>
-        <div class="portfolio-item">
-          <img src="1.jpg" alt="Portfolio 3">
-        </div>
-        <div class="portfolio-item">
-          <img src="1.jpg" alt="Portfolio 4">
-        </div>
-        <div class="portfolio-item">
-          <img src="1.jpg" alt="Portfolio 5">
-        </div>
-        <div class="portfolio-item">
-          <img src="1.jpg" alt="Portfolio 6">
-        </div>
-        <div class="portfolio-item">
-          <img src="1.jpg" alt="Portfolio 7">
-        </div>
-        <div class="portfolio-item">
-          <img src="1.jpg" alt="Portfolio 8">
-        </div>
-      </div>
-    </div>
+<body>
 
-    <!-- Right Arrow -->
-    <button class="arrow right-arrow" id="right-arrow">&#10095;</button>
-
-    <!-- Overlay with Text -->
-    <div class="overlay" id="overlay">
-      <span>This portfolio is working</span>
-    </div>
+  <div class="container_portfolio">
+    <swiper-container class="mySwiper" navigation="true" space-between="30" autoplay-delay="2500"
+      autoplay-disable-on-interaction="false" slides-per-view="3" loop="true">
+      <swiper-slide>
+        <div class="image-wrapper">
+          <img src="1.jpg" alt="Company Image">
+          <div class="overlay">
+            <h3>Company Name</h3>
+            <a href="https://example.com" target="_blank">Visit Company</a>
+          </div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="image-wrapper">
+          <img src="1.jpg" alt="Company Image">
+          <div class="overlay">
+            <h3>Company Name</h3>
+            <a href="https://example.com" target="_blank">Visit Company</a>
+          </div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="image-wrapper">
+          <img src="1.jpg" alt="Company Image">
+          <div class="overlay">
+            <h3>Company Name</h3>
+            <a href="https://example.com" target="_blank">Visit Company</a>
+          </div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="image-wrapper">
+          <img src="1.jpg" alt="Company Image">
+          <div class="overlay">
+            <h3>Company Name</h3>
+            <a href="https://example.com" target="_blank">Visit Company</a>
+          </div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="image-wrapper">
+          <img src="1.jpg" alt="Company Image">
+          <div class="overlay">
+            <h3>Company Name</h3>
+            <a href="https://example.com" target="_blank">Visit Company</a>
+          </div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="image-wrapper">
+          <img src="1.jpg" alt="Company Image">
+          <div class="overlay">
+            <h3>Company Name</h3>
+            <a href="https://example.com" target="_blank">Visit Company</a>
+          </div>
+        </div>
+      </swiper-slide>
+    </swiper-container>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
-
-  <!-- testimonials section -->
-
-  <div class="testimonials-section" id="testimonials-section">
-    <h2 class="testimonials-title">Testimonials</h2>
-    <div class="testimonials-slider-container">
-      <div class="testimonials-slider" id="testimonials-slider">
-        <!-- Testimonial Slide 1 -->
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p class="message">"Excellent service and attention to detail. Highly recommended!"</p>
-          <p class="author">- John Doe</p>
-        </div>
-        <!-- Testimonial Slide 2 -->
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p class="message">"The team was fantastic! Delivered on time and exceeded expectations."</p>
-          <p class="author">- Jane Smith</p>
-        </div>
-        <!-- Testimonial Slide 3 -->
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p class="message">"Professional, punctual, and top-notch quality. Would hire again!"</p>
-          <p class="author">- Alex Johnson</p>
-        </div>
-        <!-- Testimonial Slide 1 -->
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p class="message">"Excellent service and attention to detail. Highly recommended!"</p>
-          <p class="author">- John Doe</p>
-        </div>
-        <!-- Testimonial Slide 2 -->
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p class="message">"The team was fantastic! Delivered on time and exceeded expectations."</p>
-          <p class="author">- Jane Smith</p>
-        </div>
-        <!-- Testimonial Slide 3 -->
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p class="message">"Professional, punctual, and top-notch quality. Would hire again!"</p>
-          <p class="author">- Alex Johnson</p>
-        </div>
-        <!-- Testimonial Slide 1 -->
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p class="message">"Excellent service and attention to detail. Highly recommended!"</p>
-          <p class="author">- John Doe</p>
-        </div>
-        <!-- Testimonial Slide 2 -->
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p class="message">"The team was fantastic! Delivered on time and exceeded expectations."</p>
-          <p class="author">- Jane Smith</p>
-        </div>
-        <!-- Testimonial Slide 3 -->
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p class="message">"Professional, punctual, and top-notch quality. Would hire again!"</p>
-          <p class="author">- Alex Johnson</p>
-        </div>
-      </div>
-    </div>
-    <!-- Pagination Dots -->
-    <div class="dots" id="testimonial-dots">
-      <span class="dot" data-slide="0"></span>
-      <span class="dot" data-slide="1"></span>
-      <span class="dot" data-slide="2"></span>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
+
 </html>
+<script>
+  const swiperEl = document.querySelector('.mySwiper')
+  Object.assign(swiperEl, {
+    breakpoints: {
+      320:{
+        slidesPerView: 1,
+      },
+      550: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 50,
+      },
+      1366: {
+        slidesPerView: 5,
+        spaceBetween: 50,
+      },
+    },
+  });
+  swiperEl.initialize();
+</script>
